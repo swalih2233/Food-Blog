@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %} {% block container %} {% load static %}
+
+    {% include 'include/header.html' %}
+
+    <section id="create">
+        <section class="wrapper">
+            <h1>Create a new blog</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                <div class="form-control">
+                    <input type="text" name="title" placeholder="Enter title" value="{{blog.title}}">
+                </div>
+                <div class="form-control">
+                    <label for="blog-image">Featured Image:</label>
+                    <input type="file" name="image" id="blog-image" value="{{blog.image}}">
+                </div>
+                <div class="form-control">
+                    <input type="text" name="short_description" placeholder="Enter short description" value="{{blog.short_description}}">
+                </div>
+                <div class="form-control">
+                    
+                    <select name="categery" id="">
+                        {% for categery in categories %}
+                        <option value="{{categery.id}}">{{categery.name}}</option>
+                    {% endfor %}
+
+                    </select>
+                </div>
+                <!-- <div class="form-control">
+                    <input type="text"  placeholder="Enter tags (seperate using comma)">
+                </div> -->
+                <div class="form-control">
+                    <textarea name="description" id="" cols="30" rows="10" placeholder="Enter blog"></textarea>
+                </div>
+                <div class="btn">
+                    <input type="submit" value="Create">
+                </div>
+            </form>
+        </section>
+    </section>
+
+
+{% endblock %}
+
+
+
+

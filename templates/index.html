@@ -1,0 +1,119 @@
+{% extends 'base/base.html' %} {% block container %} {% load static %}
+
+
+    {% include 'include/header.html' %}
+
+    <section id="category">
+        <section class="wrapper">
+            <ul>
+                <li><a href="{% url 'blo:index' %}">All</a></li>
+                {% for category in categerys %}
+
+                <li><a href="{% url 'blo:category' id=category.id %}">{{category.name}}</a></li>
+                
+                {% endfor %}
+            </ul>
+        </section>
+    </section>
+
+    <section id="blogs">
+        <section class="wrapper">
+            <div class="left">
+                <div class="top">
+                    {% for blog in blogs %}
+                    <div class="card">
+
+                       
+                        <img src="{{blog.image.url}}" alt="blog-image">
+                        <h3>
+                            <a href="{% url 'blo:blog' id=blog.id %}">{{blog.title}}</a>
+                        </h3>
+                        <div>
+                            <span>{{blog.author}}</span>
+                            <span>{{blog.date}}</span>
+                        </div>
+                        <p>{{blog.description}}</p>
+                        <ul>
+                            {% for tag in blog.tags.all %}
+                            <li>{{tag}}</li>
+                            {% endfor %}
+                        </ul>
+
+                    
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="bottom">
+                    <div class="pagination">
+                        <a href="#" class="prev">
+                            <img src="{% static 'images/left-arr' %}ow.png" alt="prev">
+                        </a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <span>...</span>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#" class="next">
+                            <img src="{% static 'images/right-ar' %}row.png" alt="next">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <h1>Fiter Blogs</h1>
+                <form action="">
+                    <div class="sort">
+                        <h3>Sort by</h3>
+                        <div>
+                            <input type="radio" name="" id="">
+                            <span>Recently Added</span>
+                        </div>
+                        <div>
+                            <input type="radio" name="" id="">
+                            <span>A-Z Ascending</span>
+                        </div>
+                        <div>
+                            <input type="radio" name="" id="">
+                            <span>A-Z Descending</span>
+                        </div>
+                    </div>
+                    <div class="author">
+                        <h3>By Author</h3>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Adil cp</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Arun T</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Prabin Prakash</span>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <h3>By Tags</h3>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Food</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Healthy</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Hospital</span>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Filter">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </section>
+
+    {% endblock %}

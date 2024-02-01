@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %} {% block container %} {% load static %}
+
+    {% include 'include/header.html' %}
+
+    <section id="blog-list">
+        <section class="wrapper">
+            <div class="top">
+                <h1>My Blogs</h1>
+                <a href="#">Create</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>View</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for blog in blogs %}
+                    <tr>
+                        <td>
+                            <img src="{{blog.image.url}}" alt="blog">
+                        </td>
+                        <td>{{blog.title}}</td>
+                        <td>{{blog.date}}</td>
+                        <td>
+                            <a href="#" class="view">View</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'blo:blog_edit' id=blog.id %}" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'blo:blog_del' id=blog.id %}" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="bottom">
+                <div class="pagination">
+                    <a href="#" class="prev">
+                        <img src="{% static 'images/left-arrow.png' %}" alt="prev">
+                    </a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <span>...</span>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#" class="next">
+                        <img src="{% static 'images/right-arrow.png' %}" alt="next">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+ {% endblock %}
+
+
+
+
+
+
+
+

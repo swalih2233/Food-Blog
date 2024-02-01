@@ -1,0 +1,709 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	background: transparent;
+	font-weight: normal;
+	text-decoration: none;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    --red: #FF275B;
+    --gray: #606060;
+    --white: #FFFFFF;
+    --dark: #252525;
+}
+ol, ul {
+	list-style: none;
+}
+
+body {
+	font-family: "Nunito", Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	color: var(--dark);
+	overflow-x: hidden;
+	min-width: 320px;
+	font-weight: 500;
+}
+input,textarea,select{
+	font-family: "Nunito", Arial, Helvetica, sans-serif;
+	font-weight: 500;
+}
+
+a{
+	color: var(--dark);
+}
+p{
+	line-height:1.6em;
+	font-size: 16px;
+	font-family: "Nunito", Arial;
+	font-weight: 500;
+	color: var(--dark);
+}
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+.flex-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url("../fonts/Nunito-Light.woff2") format("woff2");
+    src: url("../fonts/Nunito-Light.woff") format("woff");
+    font-weight: 500;
+    font-style: light
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url("../fonts/Nunito-Medium.woff2") format("woff2");
+    src: url("../fonts/Nunito-Medium.woff") format("woff"),;
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url("../fonts/Nunito-SemiBold.woff2") format("woff2");
+    src: url("../fonts/Nunito-SemiBold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url("../fonts/Nunito-Bold.woff2") format("woff2");
+    src: url("../fonts/Nunito-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+::placeholder {
+  color: #9B9B9B;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #9B9B9B;
+}
+
+::-ms-input-placeholder {
+  color: #9B9B9B;
+}
+
+
+header{
+    height: 80px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+header .wrapper{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .wrapper div.left{}
+
+header .wrapper div.left h1{
+    width: 160px;
+}
+
+header .wrapper div.left h1 a{
+    display: block;
+    width: 100%;
+}
+
+header .wrapper div.left h1 a img{
+    display: block;
+    width: 100%;
+}
+
+header .wrapper div.middle{}
+
+header .wrapper div.middle form div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #9B9B9B;
+    border-radius: 8px;
+}
+
+header .wrapper div.middle form div input{} 
+
+header .wrapper div.middle form div img{
+    width: 18px;
+} 
+
+header .wrapper div.right{}
+
+header .wrapper div.right ul{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+header .wrapper div.right ul li{
+    margin-right: 16px;
+}
+
+header .wrapper div.right ul li:last-child {
+    margin-right: 0;
+}
+
+header .wrapper div.right ul li a{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+header .wrapper div.right ul li:last-child a{
+    padding: 8px 16px;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 8px;
+}
+
+
+
+#category{
+    padding: 40px 0;
+}
+
+#category .wrapper{}
+
+#category .wrapper ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#category .wrapper ul li{
+    margin-right: 24px;
+    margin-bottom: 24px;
+}
+
+#category .wrapper ul li a{
+    padding: 8px 16px;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+}
+
+#category .wrapper ul li a.active{
+    color: var(--white);
+    background-color: var(--red);
+}
+
+
+#blogs{
+    margin-bottom: 60px;
+}
+
+#blogs .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+#blogs .wrapper div.left{
+    width: 78%;
+}
+
+#blogs .wrapper div.left div.top{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#blogs .wrapper div.left div.top div.card{
+    width: 30%;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    padding: 16px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border: 1px solid #f1f1f1;
+    border-radius: 16px;
+}
+
+#blogs .wrapper div.left div.top div.card:nth-child(3n){
+    margin-right: 0;
+}
+
+#blogs .wrapper div.left div.top div.card img{
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+
+#blogs .wrapper div.left div.top div.card h3{
+    margin-top: 16px;
+    color: var(--red);
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#blogs .wrapper div.left div.top div.card div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+#blogs .wrapper div.left div.top div.card div span{
+    font-size: 12px;
+    font-weight: 500;
+}
+ 
+#blogs .wrapper div.left div.top div.card p{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+#blogs .wrapper div.left div.top div.card ul{
+    display: flex; 
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#blogs .wrapper div.left div.top div.card ul li{
+    margin-right: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid var(--red);
+    padding: 6px 10px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+}
+
+#blogs .wrapper div.right{
+    width: 20%;
+}
+
+#blogs .wrapper div.right h1{
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--red);
+}
+
+#blogs .wrapper div.right form{}
+
+#blogs .wrapper div.right form div{}
+
+#blogs .wrapper div.right form div h3{
+    margin: 24px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#blogs .wrapper div.right form div div{}
+ 
+#blogs .wrapper div.right form div div span{
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+#blogs .wrapper div.right form div div input{}
+
+#blogs .wrapper div.right form div.submit{
+    margin-top: 24px;
+}
+
+#blogs .wrapper div.right form div.submit input{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 16px;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 8px;
+}
+
+
+
+div.pagination{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.pagination a.prev{
+    width: 22px;
+    margin-right: 24px;
+    border: none;
+    padding: 0;
+}
+
+div.pagination a.prev img{
+    width: 100%;
+    display: block;
+}
+
+div.pagination a{
+    margin-right: 16px;
+    border: 1px solid var(--red);
+    padding: 6px 10px;
+    font-size: 16px;
+}
+
+div.pagination span{
+    margin-right: 16px;
+}
+
+div.pagination a.active{
+    color: var(--white);
+    background-color: var(--red);
+}
+
+div.pagination a.next{
+    width: 22px;
+    margin-left: 24px;
+    border: none;
+    padding: 0;
+}
+
+div.pagination a.next img{
+    width: 100%;
+    display: block;
+}
+
+
+#login{}
+
+#login .wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login .wrapper div.container{
+    width: 50%;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border: 1px solid #f1f1f1;
+    padding: 24px;
+}
+
+#login .wrapper div.container form{}
+
+#login .wrapper div.container form div.logo{
+    width: 180px;
+    margin: 0 auto;
+}
+
+#login .wrapper div.container form div.logo img{
+    width: 100%;
+    display: block;
+}
+
+#login .wrapper div.container form h1{
+    margin-top: 24px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+#login .wrapper div.container form div.form-control{
+    margin-bottom: 24px;
+    padding: 8px 16px;
+    border: 1px solid #e6e4e4;
+    border-radius: 8px;
+}
+
+#login .wrapper div.container form div.form-control input{
+    width: 100%;
+}
+
+#login .wrapper div.container form div.btn {
+    text-align: center;
+}
+
+#login .wrapper div.container form p{
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+#login .wrapper div.container form p a{
+    margin-right: 4px;
+    color: var(--red);
+    font-weight: 500;
+}
+
+#login .wrapper div.container form div.btn input{
+    padding: 8px 16px;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+#create{
+    padding: 45px 0;
+}
+
+#create .wrapper{}
+
+#create .wrapper h1{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+#create .wrapper form{
+    width: 90%;
+    margin: 0 auto;
+}
+
+#create .wrapper form div.form-control{
+    margin-bottom: 24px;
+    padding: 16px 24px;
+    border: 2px solid #e6e4e4;
+    border-radius: 12px;
+    display: flex;
+}
+
+#create .wrapper form div.form-control label{
+    width: 20%;
+}
+
+#create .wrapper form div.form-control input{
+    width: 100%;
+    font-size: 18px;
+}
+ 
+#create .wrapper form div.form-control select{
+    width: 100%;
+    font-size: 18px;
+}
+
+#create .wrapper form div.form-control textarea{
+    font-size: 18px;
+}
+
+#create .wrapper form div.btn {
+    text-align: center;
+}
+
+#create .wrapper form div.btn input{
+    padding: 12px 24px;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+ 
+
+
+#blog-list{
+    padding: 45px 0;
+}
+
+#blog-list div.top{
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#blog-list div.top h1{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#blog-list div.top a{
+    padding: 8px 16px;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#blog-list table{
+    width: 100%;
+    text-align: center;
+    margin-top: 24px;
+}
+
+#blog-list table thead tr{
+    padding: 8px;
+}
+
+#blog-list table thead th{
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 2px solid #e6e4e4;
+    border-top: 2px solid #e6e4e4;
+    padding: 16px;
+}
+
+#blog-list table tbody{}
+
+#blog-list table tbody td{
+    border-bottom: 2px solid #e6e4e4;
+    vertical-align: middle;
+}
+ 
+#blog-list table tbody td img{
+    width: 100px;
+    border-radius: 8px;
+}
+
+#blog-list table tbody td a.view{
+    padding: 8px 16px;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#blog-list table tbody td a.edit{
+    padding: 8px 16px;
+    border: 1px solid var(--dark);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#blog-list table tbody td a.delete{
+    padding: 8px 16px;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#blog-details{
+    padding: 45px 0;
+}
+
+#blog-details .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+#blog-details .wrapper div.left{
+    width: 80%;
+    border-right: 2px solid #e6e4e4;
+}
+
+#blog-details .wrapper div.left h1{
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+#blog-details .wrapper div.left p{
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 16px;
+    width: 90%;
+}
+
+#blog-details .wrapper div.left div{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+#blog-details .wrapper div.left div p{
+    font-size: 14px;
+    font-weight: 600;
+    width: 10%;
+}
+
+#blog-details .wrapper div.left img {
+    width: 75%;
+}
+ 
+#blog-details .wrapper div.right{
+    width: 18%;
+}
+
+#blog-details .wrapper div.right h3{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--red);
+}
+
+#blog-details .wrapper div.right div{
+    margin-bottom: 24px;
+}
+
+#blog-details .wrapper div.right div img{
+    width: 100%;
+    display: block;
+    margin-bottom: 8px;
+    border-radius: 8px;
+}
+
+#blog-details .wrapper div.right div h3{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+#pricing{
+    padding: 60px 0;
+}
+
+#pricing .wrapper{}
+
+#pricing .wrapper div.container{
+    display: flex;
+    justify-content: space-between;
+}
+ 
+#pricing .wrapper div.container div.card{
+    width: 32%;
+    border: 2px solid #eee;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+#pricing .wrapper div.container div.card h3{
+    text-align: center;
+    padding: 16px 0;
+    border-bottom: 2px solid #eee;
+    font-weight: 700;
+}
+
+#pricing .wrapper div.container div.card h1{}
+
+#pricing .wrapper div.container div.card p{}
+
+#pricing .wrapper div.container div.card span{}
+
+#pricing .wrapper div.container div.card a{}
+
+#pricing .wrapper div.container div.card:nth-child(2) h3{
+    background-color: #eee;
+}
+
+#pricing .wrapper div.container div.card:nth-child(2) a{}
+
+.message{
+    color: red;
+}
